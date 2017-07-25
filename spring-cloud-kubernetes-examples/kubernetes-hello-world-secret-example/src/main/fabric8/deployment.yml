@@ -1,0 +1,16 @@
+spec:
+  template:
+    spec:
+      volumes:
+        - name: "hello-world-secret"
+          secret:
+            # The secret must be created before deploying this application
+            secretName: "hello-world-secret"
+      containers:
+        -
+          volumeMounts:
+            - name: "hello-world-secret"
+              readOnly: true
+              # Mount the secret where spring-cloud-kubernetes is configured to read it
+              # see src/main/resources/application.properties
+              mountPath: "/etc/secrets/hello-world-secret"
