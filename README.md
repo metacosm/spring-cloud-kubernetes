@@ -380,7 +380,7 @@ Properties:
 | ---                                                    | ---     | ---                        | ---
 | spring.cloud.kubernetes.reload.enabled                 | Boolean | false                      | Enables monitoring of property sources and configuration reload
 | spring.cloud.kubernetes.reload.monitoring-config-maps  | Boolean | true                       | Allow monitoring changes in config maps
-| spring.cloud.kubernetes.reload.monitoring-secrets      | Boolean | false                      | Allow monitoring changes in secrets
+| spring.cloud.kubernetes.reload.monitoring-secrets      | Boolean | false                      | Allow monitoring changes in secrets (only works with a service account allowed to list secrets)
 | spring.cloud.kubernetes.reload.strategy                | Enum    | refresh                    | The strategy to use when firing a reload (*refresh*, *restart_context*, *shutdown*)
 | spring.cloud.kubernetes.reload.mode                    | Enum    | event                      | Specifies how to listen for changes in property sources (*event*, *polling*)
 | spring.cloud.kubernetes.reload.period                  | Long    | 15000                      | The period in milliseconds for verifying changes when using the *polling* strategy
@@ -388,6 +388,8 @@ Properties:
 Notes:
 - Properties under *spring.cloud.kubernetes.reload.* should not be used in config maps or secrets: changing such properties at runtime may lead to unexpected results;
 - Deleting a property or the whole config map does not restore the original state of the beans when using the *refresh* level.
+- Monitoring secrets will only work properly if the project's service account has sufficient permissions to list 
+secrets.
 
 
 ### Pod Health Indicator
