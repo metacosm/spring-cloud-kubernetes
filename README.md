@@ -175,7 +175,7 @@ spec:
 
 | Name                                     | Type    | Default                    | Description
 | ---                                      | ---     | ---                        | ---
-| spring.cloud.kubernetes.config.enabled   | Boolean | true                       | Enable Secrets PropertySource
+| spring.cloud.kubernetes.config.enabled   | Boolean | true                       | Enable config map PropertySource
 | spring.cloud.kubernetes.config.name      | String  | ${spring.application.name} | Sets the name of ConfigMap to lookup
 | spring.cloud.kubernetes.config.namespace | String  | Client namespace           | Sets the Kubernetes namespace where to lookup
     
