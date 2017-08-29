@@ -5,7 +5,7 @@
 	<parent>
 		<artifactId>spring-cloud-kubernetes-examples</artifactId>
 		<groupId>org.springframework.cloud</groupId>
-		<version>0.2.0.BUILD-SNAPSHOT</version>
+		<version>0.2.1.BUILD-SNAPSHOT</version>
 	</parent>
 	<artifactId>kubernetes-hello-world-secret-example</artifactId>
 	<name>Spring Cloud Kubernetes :: Examples :: Hello World With Secret</name>
