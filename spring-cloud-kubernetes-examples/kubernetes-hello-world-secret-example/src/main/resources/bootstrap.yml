@@ -1,0 +1,15 @@
+spring:
+    application:
+        name: "hello-world-secret-example"
+    cloud:
+        kubernetes:
+            secrets:
+              enabled: true
+              paths:
+                - "/etc/hello-world-secret"
+            #reload.enabled=true
+            # requires service account able to list secrets
+            #reload.monitoring-secrets=true
+greeting:
+    secretName: "Not Secret"
+

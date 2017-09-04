@@ -13,4 +13,4 @@ spec:
               readOnly: true
               # Mount the secret where spring-cloud-kubernetes is configured to read it
               # see src/main/resources/application.properties
-              mountPath: "/etc/secrets/hello-world-secret"
+              mountPath: "/etc/hello-world-secret"
